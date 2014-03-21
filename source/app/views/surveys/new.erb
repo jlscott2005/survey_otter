@@ -2,27 +2,18 @@
 <form id='survey-builder' action="/surveys" method="post">
   <input name="survey[title]" placeholder="title">
   <ol>
-    <li><input type='text' name='survey[questions][][question]' placeholder='question'>
+    <li>
+      <input type='text' name='survey[questions][][question]' placeholder='question'>
+      <button class='remove-button'>✖</button>
+      <button class='button add-option'>add option</button>
       <ul>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-      </ul>
-    </li>
-    <li><input type='text' name='survey[questions][][question]' placeholder='question'>
-      <ul>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
-        <li><input type="text" name="survey[questions][][options][]" placeholder='option'></li>
+        <li><input type='text' name='survey[questions][][options][]' placeholder='option'><button class='remove-button'>✖</button></li>
       </ul>
     </li>
   </ol>
-
+  <a href="#" class='button add-question'><button>Add question</button></a>
   <input type='submit' value='Create My Survey!'/>
 </form>
-<!-- <a href='#' class= -->
 </div>
 
 
