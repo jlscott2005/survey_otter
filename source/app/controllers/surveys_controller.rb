@@ -11,6 +11,22 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  p params
-  nil
+  @survey = Survey.create(params)
+  redirect to '/surveys/#{@survey.id}'
 end
+
+get '/surveys/:id' do
+  @survey = Survey.find(params[:id])
+  erb :"surveys/show"
+end
+
+=begin
+{"survey"=>
+  {"title"=>"blah",
+    "questions"=>[
+      {"question"=>"asdfgs", "options"=>["adfg", "adfgg"]},
+      {"question"=>"jklhg", "options"=>["dsrtjyd", "liukyjdthsr"]}
+    ]
+  }
+}
+=end
