@@ -1,5 +1,5 @@
 get '/' do
-  # @surveys = Survey.all
-  @surveys = []
+  @surveys = Survey.all
+  # @surveys = []
   erb :index
 end
