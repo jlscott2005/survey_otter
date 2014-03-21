@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h3>Welcome!</h3>
+
+  <h4>Otter Surveys Taken</h4>
+  <ol>
+  <% @user.reviewed_surveys.each do |survey| %>
+    <li><a href="#"><%= survey.title %></a></li>
+  <% end %>
+  </ol>
+  <h4>Otter Surveys Created</h4>
+  <ol>
+    <% @user.surveys.each do |show| %>
+      <li><a href="#"><%= show.title %></a></li>
+    <%end%>
+  </ol>
+  <a href="#">Create Post</a>
+</div>
