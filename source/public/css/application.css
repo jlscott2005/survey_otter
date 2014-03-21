@@ -17,16 +17,38 @@ th {
 
 button {
   width: 100px;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   background-color: #E65F17;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
 }
 
 button:hover {
   background-color: #E6AE17;
+}
+
+.remove-button {
+  width: 20px;
+  margin: 0;
+  background-color: white;
+  color: red;
+  border: none;
+  padding: 0;
+  border-radius: 10px;
+  /*line-height: 10px;*/
+}
+
+.remove-button:hover {
+  width: 20px;
+  margin: 0;
+  background-color: white;
+  color: red;
+  border: none;
+  padding: 0;
+  border-radius: 10px;
+  /*line-height: 10px;*/
 }
 
 #new-post > input, textarea {
