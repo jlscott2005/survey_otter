@@ -1,4 +1,5 @@
 get '/' do
-  # in app/views/...
+  # @surveys = Survey.all
+  @surveys = []
   erb :index
 end
