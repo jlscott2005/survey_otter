@@ -11,8 +11,8 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  @survey = Survey.create(params)
-  redirect to '/surveys/#{@survey.id}'
+  @survey = create_survey(params)
+  erb :"surveys/show"
 end
 
 get '/surveys/:id' do
@@ -20,13 +20,20 @@ get '/surveys/:id' do
   erb :"surveys/show"
 end
 
-=begin
-{"survey"=>
-  {"title"=>"blah",
-    "questions"=>[
-      {"question"=>"asdfgs", "options"=>["adfg", "adfgg"]},
-      {"question"=>"jklhg", "options"=>["dsrtjyd", "liukyjdthsr"]}
-    ]
-  }
-}
-=end
+
+def create_survey(params)
+  survey_params = params[:survey]
+  title = survey_params[:title]
+  question_hashes = survey_params[:questions]
+  formatted_question_hashes = question_hashes.map { |hsh| format_question_hash(hsh) }
+  questions = formatted_question_hashes.map { |args| Question.create(args) }
+  Survey.create(title: title, questions: questions)
+end
+
+
+
+def format_question_hash(question_hash)
+  question_hash[:options].map! { |option_text| Option.create(text: option_text)}
+  return question_hash
+end
+
