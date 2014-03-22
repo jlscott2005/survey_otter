@@ -37,7 +37,7 @@ ol > li:first-child {
 }
 
 ol > li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 20;
 }
 
 input {
@@ -63,7 +63,7 @@ ul {
 }
 
 .add-question {
-  margin-left: 40px;
+  margin: 0 0 0 40px;
   width: 420px;
 }
 
