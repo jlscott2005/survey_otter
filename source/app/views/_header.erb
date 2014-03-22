@@ -1,13 +1,36 @@
 <div class="header">
   <img src='/img/otter.png'>
   <h1><a href="/">Survey Otter</a></h1>
-  <div id='logout'>
-    <% if session[:login] %>
-      <p>Welcome, <%= session[:username] %> the Otter!</p><br>
-      <a href='/logout'>Logout</a>
+  <div id="user-box">
+    <% if session[:user_id] %>
+      <div id="user">
+        <form action='/sessions/<%=session[:user_id]%>' method="get">
+          <input type='submit' value="logout">
+        </form>
+      </div>
     <% else %>
-      <p>Welcome, Anonymous Otter!</p><br>
-      <a href='/login'>Login</a>
+      <div id="non-user">
+        <p>Welcome, Anonymous Otter!</p>
+        <button id="login-button" type="button"><a href="/login">Login</a></button>
+        <button id="signup-button" type="button"><a href="/signup">Signup</a></button>
+      </div>
+      <div id="login">
+        <form action='/sessions' method="post">
+          <input type='text' placeholder='username' name='login[username]'>
+          <input type='password' placeholder='password' name='login[password]'>
+          <input type='submit' value="Enter the Otter">
+          <a href="/">cancel</a>
+        </form>
+      </div>
+      <div id="signup">
+        <form action='/users' method="post">
+          <input type='text' placeholder='username' name='signup[username]'>
+          <input type='password' placeholder='password' name='signup[password]'>
+          <input type='password' placeholder='confirm password' name='signup[password_confirmation]'>
+          <input type='submit' value="Join the Otters">
+          <a href="/">cancel</a>
+        </form>
+      </div>
     <% end %>
   </div>
 </div>

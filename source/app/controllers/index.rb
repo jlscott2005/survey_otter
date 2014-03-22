@@ -1,5 +1,5 @@
 get '/' do
   @surveys = Survey.all
-  # @surveys = []
+  @user = {name: "Nothing"}
   erb :index
 end

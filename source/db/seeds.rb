@@ -1,9 +1,9 @@
 
-User.create(name: "Vanilla Bear", password: "poop", password_confirmation: "poop")
-User.create(name: "Kelsey Otter", password: "boom", password_confirmation: "boom")
-User.create(name: "Tony Totter", password: "biggity", password_confirmation: "biggity")
-User.create(name: "Calder Cobra", password: "hiss", password_confirmation: "hiss")
-User.create(name: "Jarrod Joker", password: "haha", password_confirmation: "haha")
+User.create(name: "VanillaBear", password: "poop", password_confirmation: "poop")
+User.create(name: "KelseyOtter", password: "boom", password_confirmation: "boom")
+User.create(name: "TonyTotter", password: "biggity", password_confirmation: "biggity")
+User.create(name: "CalderCobra", password: "hiss", password_confirmation: "hiss")
+User.create(name: "JarrodJoker", password: "haha", password_confirmation: "haha")
 
 Survey.create(creator_id: 5, title: "What is love?")
 Survey.create(creator_id: 1, title: "what did the otter say?")

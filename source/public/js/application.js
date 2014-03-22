@@ -1,7 +1,32 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+    $('#user-box #login-button').on('click', function(e) {
+      e.preventDefault();
+      $('#login').show();
+      $('#non-user').hide();
+    });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    $('#user-box #signup-button').on('click', function(e) {
+      e.preventDefault();
+      $('#signup').show();
+      $('#non-user').hide();
+    });
+
+    $('#user-box #login form a').on('click', function(e) {
+      e.preventDefault();
+      $('#login').hide();
+      $('#non-user').show();
+    });
+
+    $('#user-box #signup form a').on('click', function(e) {
+      e.preventDefault();
+      $('#signup').hide();
+      $('#non-user').show();
+    });
+
+  //   $('#logout button a').on("click", function (e) {
+  //   e.preventDefault();
+  //   var request = $.ajax({ url: $(this).attr('href'), type: 'delete' });
+  //   request.done(function () { window.location = "/"; });
+  // });
+
 });
