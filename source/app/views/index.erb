@@ -4,5 +4,9 @@
     <li><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></li>
     <% end %>
   </ol>
+  <% if session[:user_id] != nil %>
   <a href="/surveys/new">Create a Survey!</a>
+  <% else %>
+  <p>Log in to create a survey!</p>
+  <% end %>
 </div>

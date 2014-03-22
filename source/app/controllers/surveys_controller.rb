@@ -4,11 +4,16 @@ get '/surveys' do
 end
 
 get '/surveys/new' do
+  if session[:user_id] == nil
+    redirect to '/'
+  else
     erb :'surveys/new'
+  end
 end
 
 post '/surveys' do
   @survey = SurveyBuilderParser.create_survey(params)
+  @survey.creator = User.find(session[:user_id])
   erb :"surveys/show"
 end
 
