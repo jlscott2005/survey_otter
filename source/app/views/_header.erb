@@ -1,13 +1,28 @@
 <div class="header">
   <img src='/img/otter.png'>
   <h1><a href="/">Survey Otter</a></h1>
-  <div id='logout'>
+  <div id="user-box">
     <% if session[:login] %>
-      <p>Welcome, <%= session[:username] %> the Otter!</p><br>
-      <a href='/logout'>Logout</a>
+      <div id="user">
+        <p>Welcome, <%= session[:username] %> the Otter!</p>
+        <button type="button"><a href="/logout">Logout</a></button>
+      </div>
     <% else %>
-      <p>Welcome, Anonymous Otter!</p><br>
-      <a href='/login'>Login</a>
+      <div id="non-user">
+        <p>Welcome, Anonymous Otter!</p>
+        <button type="button"><a href="/login">Login</a></button>
+      </div>
+      <div id="user">
+        <p>Welcome, <%= session[:username]%>  the Otter!</p>
+        <button type="button"><a href="/logout">Logout</a></button>
+      </div>
+      <div id="login">
+        <form action='/sessions' method="post">
+          <input type='text' placeholder='username' name='login[username]' value='<%= session[:username] %>'>
+          <input type='password' placeholder='password' name='login[password]'>
+          <input type='submit' value="Enter the Otter">
+        </form>
+      </div>
     <% end %>
   </div>
 </div>
