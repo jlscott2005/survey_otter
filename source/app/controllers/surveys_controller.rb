@@ -19,7 +19,11 @@ end
 
 get '/surveys/:id' do
   @survey = Survey.find(params[:id])
-  erb :"surveys/show"
+  if session[:user_id] == nil
+    redirect to '/'
+  else
+    erb :"surveys/show"
+  end
 end
 
 get '/surveys/:id/edit' do
@@ -50,6 +54,14 @@ patch '/surveys' do
   redirect to "/surveys/#{survey.id}"
 end
 
+# get '/surveys/:id/take' do
+#   @survey = Survey.find(params[:id])
+#   if session[:user_id] == nil
+#     redirect to '/'
+#   else
+#     erb :"surveys/show"
+#   end
+# end
 
 
 

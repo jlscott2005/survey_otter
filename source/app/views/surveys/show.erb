@@ -1,18 +1,21 @@
 <div class="container">
 	<h2><%= @survey.title %></h2>
-	<ol>
-		<% @survey.questions.each do |question| %>
-		<li><%= question.question %></li>
-			<ul>
-				<% question.options.each do |option| %>
-				<li><input type="radio" name="<%= question.question %>"> <%= option.text %></li>
-				<% end %>
-			</ul><br>
-		<% end %>
-	</ol>
-	<!-- add sessions check here -->
-	<a href="surveys/"><button>Take this Survey!</button></a>
+	<form id="take_survey" action="surveys/<%= @survey.id %>/take" method="post">
+		<ol>
+			<% @survey.questions.each do |question| %>
+			<li><%= question.question %></li>
+				<ul>
+					<% question.options.each do |option| %>
+					<li><input type="radio" name="<%= question.id %>" value="<%= option.id%>"><%= option.text %></li>
+					<% end %>
+				</ul><br>
+			<% end %>
+		</ol>
+		<input type="submit" value="Submit!">
+	</form>
 </div>
+
+
 <% content_for :style do %>
   <link rel="stylesheet" href="/css/survey_builder.css"/>
 <% end %>
