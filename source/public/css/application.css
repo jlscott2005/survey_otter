@@ -15,9 +15,31 @@ th {
   text-align: left;
 }
 
-button, .button {
+#user-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#user-box > * {
+  font-size: 0.6em;
+  color: #E6AE17;
+  float: right;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*#user {
+  display: none;
+}*/
+
+#user-box button {
+  float: right;
+}
+
+button {
   width: 100px;
-  margin: 10px 0 0 0;
   background-color: #E65F17;
   color: white;
   border: none;
@@ -25,7 +47,7 @@ button, .button {
   border-radius: 5px;
 }
 
-button:hover, .button:hover {
+button:hover {
   background-color: #E6AE17;
 }
 
@@ -75,20 +97,6 @@ button:hover, .button:hover {
 .header img {
   height: 90px;
 }
-#logout {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#logout > * {
-  font-size: 0.6em;
-  color: #E6AE17;
-  float: right;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
 
 .comment {
   margin: 20px auto;
@@ -121,3 +129,17 @@ button:hover, .button:hover {
   color: red;
   font-size: .7em;
 }
+
+
+#login {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#login form > * {
+  float: right;
+  margin-bottom: 10px;
+}
+
