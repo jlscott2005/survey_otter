@@ -8,7 +8,7 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  @survey = create_survey(params)
+  @survey = SurveyBuilderParser.create_survey(params)
   erb :"surveys/show"
 end
 
@@ -33,19 +33,4 @@ end
 
 
 
-def create_survey(params)
-  survey_params = params[:survey]
-  title = survey_params[:title]
-  question_hashes = survey_params[:questions]
-  formatted_question_hashes = question_hashes.map { |hsh| format_question_hash(hsh) }
-  questions = formatted_question_hashes.map { |args| Question.create(args) }
-  Survey.create(title: title, questions: questions)
-end
-
-
-
-def format_question_hash(question_hash)
-  question_hash[:options].map! { |option_text| Option.create(text: option_text)}
-  return question_hash
-end
 
