@@ -1,6 +1,7 @@
 enable :sessions
 
 post '/sessions' do
+  @surveys = Survey.all
   @user = User.check_password(params[:login][:username], params[:login][:password])
   if @user
     session[:user_id] = @user.id
