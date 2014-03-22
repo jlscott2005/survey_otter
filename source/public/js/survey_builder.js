@@ -1,6 +1,6 @@
-var optionNode = "<li><input class='option' type='text' name='survey[questions][][options][]' placeholder='an option'> <button class='remove-button'>✖</button></li>";
+var optionNode = "<li><input class='option' type='text' name='survey[questions][][options][]' placeholder='an option'> <button tabindex = '-1' class='remove-button'>✖</button></li>";
 
-var questionNode = "<li><input class='question' type='text' name='survey[questions][][question]' placeholder='What do you want to ask?'> <button class='remove-button'>✖</button><button class='button add-option'>add option</button><ul>"+optionNode+"</ul></li>";
+var questionNode = "<li><input class='question' type='text' name='survey[questions][][question]' placeholder='What do you want to ask?'> <button tabindex = '-1' class='remove-button'>✖</button> <button tabindex = '-1' class='button add-option'>add option</button><ul>"+optionNode+"</ul></li>";
 
 $(document).ready(function(){
 
