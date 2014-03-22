@@ -1,15 +1,13 @@
 <div class="container">
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<%= @survey.title %>
+	<ol>
+		<% @survey.questions.each do |question| %>
+		<li><%= question.question %></li>
+			<ul>
+				<% question.options.each do |option| %>
+				<li><%= option.text %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	</ol>
 </div>
