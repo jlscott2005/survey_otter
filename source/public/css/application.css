@@ -15,9 +15,12 @@ th {
   text-align: left;
 }
 
+#user-box button {
+  float: right;
+}
+
 button, .button {
   width: 100px;
-  margin: 10px 0 0 0;
   background-color: #E65F17;
   color: white;
   border: none;
@@ -75,19 +78,23 @@ button:hover, .button:hover {
 .header img {
   height: 90px;
 }
-#logout {
+#user-box {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-#logout > * {
+#user-box > * {
   font-size: 0.6em;
   color: #E6AE17;
   float: right;
   text-decoration: none;
   margin: 0;
   padding: 0;
+}
+
+#user-box #user {
+  display: none;
 }
 
 .comment {
@@ -120,4 +127,16 @@ button:hover, .button:hover {
   width: 150px;
   color: red;
   font-size: .7em;
+}
+
+#login {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#login form > * {
+  float: right;
+  margin-bottom: 10px;
 }
