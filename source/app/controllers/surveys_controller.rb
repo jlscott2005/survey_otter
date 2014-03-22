@@ -21,6 +21,21 @@ get '/surveys/:id' do
   erb :"surveys/show"
 end
 
+get '/surveys/:id/edit' do
+  @survey = Survey.find(params[:id])
+  erb :'surveys/edit'
+end
+
+patch '/surveys' do
+ p params
+
+ survey_update = params[:survey][:title]
+ questions_update = params[:survey][:questions]
+ options_update = params[:survey][:options]
+ nil
+end
+
+
 
 def create_survey(params)
   survey_params = params[:survey]

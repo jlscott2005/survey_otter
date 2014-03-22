@@ -1,0 +1,35 @@
+<div class='container'>
+<h1>Edit Your Survey!</h1>
+<p>* You can only edit the content of current fields.</p>
+<!-- @survey -->
+<form id='survey-builder' action="/surveys" method="post">
+  Survey Title: <input class='survey-title' name="survey[title][<%= @survey.id %>]" placeholder="One Bad Mutha-Otter Survey" value='<%= @survey.title %>'>
+  <ol>
+
+    <% @survey.questions.each do |question| %>
+      <li>
+        <input class='question' type='text' name='survey[questions][][<%= question.id %>]' placeholder='What do you want to ask?' value='<%= question.question %>'>
+        <ul>
+
+          <% question.options.each do |option| %>
+            <li>
+              <input class='option' type='text' name='survey[options][][<%= option.id %>]' placeholder='an option' value='<%= option.text %>'>
+            </li>
+          <% end %>
+
+        </ul>
+      </li>
+    <% end %>
+
+
+
+  </ol>
+  <div class='bottom-border'></div>
+  <input type='hidden' name='_method' value='patch' />
+  <input class='button' id='create-survey' type='submit' value='Update My Survey! >>'/>
+</form>
+</div>
+
+<% content_for :style do %>
+  <link rel="stylesheet" href="/css/survey_builder.css"/>
+<% end %>

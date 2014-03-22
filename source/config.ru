@@ -8,8 +8,11 @@ configure do
   enable :sessions
   set :session_secret, ENV['SESSION_SECRET'] || 'this is a secret shhhhh'
 
-  # Set the views to 
+  # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+  # Allows use of PATCH and DELETE
+  set :method_override, true
 end
 
 run Sinatra::Application
