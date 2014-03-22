@@ -4,7 +4,6 @@
   <div id="user-box">
     <% if session[:user_id] %>
       <div id="user">
-
         <form action='/sessions/<%=session[:user_id]%>' method="get">
           <input type='submit' value="logout">
         </form>
@@ -12,13 +11,24 @@
     <% else %>
       <div id="non-user">
         <p>Welcome, Anonymous Otter!</p>
-        <button type="button"><a href="/login">Login</a></button>
+        <button id="login-button" type="button"><a href="/login">Login</a></button>
+        <button id="signup-button" type="button"><a href="/signup">Signup</a></button>
       </div>
       <div id="login">
         <form action='/sessions' method="post">
-          <input type='text' placeholder='username' name='login[username]' value='<%= session[:username] %>'>
+          <input type='text' placeholder='username' name='login[username]'>
           <input type='password' placeholder='password' name='login[password]'>
           <input type='submit' value="Enter the Otter">
+          <a href="/">cancel</a>
+        </form>
+      </div>
+      <div id="signup">
+        <form action='/sessions' method="post">
+          <input type='text' placeholder='username' name='login[username]'>
+          <input type='password' placeholder='password' name='login[password]'>
+          <input type='password' placeholder='confirm password' name='login[password_confirmation]'>
+          <input type='submit' value="Join the Otters">
+          <a href="/">cancel</a>
         </form>
       </div>
     <% end %>

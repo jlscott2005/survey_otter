@@ -1,4 +1,5 @@
 get '/surveys' do
+  @surveys = Survey.all
   redirect to '/'
 end
 

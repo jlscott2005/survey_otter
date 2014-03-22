@@ -133,13 +133,49 @@ button:hover {
 
 #login {
   display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
+  background-color: #6A92D4;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 #login form > * {
-  float: right;
+  display: inline-block;
   margin-bottom: 10px;
 }
 
+#login input:nth-child(2) {
+  display: block;
+}
+
+#login input:last-child {
+  display: inline-block;
+}
+
+#signup {
+  float: right;
+  display: none;
+  background-color: #6A92D4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#signup input:nth-child(3) {
+  display: block;
+
+}
+
+#signup input:last-child {
+  display: inline-block;
+}
+
+#sigup form > * {
+  margin-bottom: 10px;
+}
+
+#non-user button {
+  margin-right: 5px;
+}
+
+#non-user button:last-child {
+  margin-right: none;
+}
