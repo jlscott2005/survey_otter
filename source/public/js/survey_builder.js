@@ -1,14 +1,22 @@
+var optionNode = "<li><input class='option' type='text' name='survey[questions][][options][]' placeholder='an option'> <button class='remove-button'>✖</button></li>";
+
+var questionNode = "<li><input class='question' type='text' name='survey[questions][][question]' placeholder='What do you want to ask?'> <button class='remove-button'>✖</button><button class='button add-option'>add option</button><ul>"+optionNode+"</ul></li>";
+
 $(document).ready(function(){
-  $('form').on('click', '.add-question', function(event){
+
+  $('#survey-builder > ol').append(questionNode);
+
+  $('#survey-builder').on('click', '.add-question', function(event){
     event.preventDefault();
-    $($(this).siblings('ol')).append("<li><input type='text' name='survey[questions][][question]' placeholder='question'><button class='remove-button'>✖</button><button class='button add-option'>add option</button><ul><li><input type='text' name='survey[questions][][options][]' placeholder='option'><button class='remove-button'>✖</button></li></ul></li>");
+    $($(this).siblings('ol')).append(questionNode);
   });
-  $('form').on('click', '.add-option', function(event){
+
+  $('#survey-builder').on('click', '.add-option', function(event){
     event.preventDefault();
-    console.log('hello');
-    $($(this).siblings('ul')).append("<li><input type='text' name='survey[questions][][options][]' placeholder='option'><button class='remove-button'>✖</button></li>");
+    $($(this).siblings('ul')).append(optionNode);
   });
-  $('form').on('click', '.remove-button', function(event){
+
+  $('#survey-builder').on('click', '.remove-button', function(event){
     event.preventDefault();
     $(this).parent().remove();
   });
