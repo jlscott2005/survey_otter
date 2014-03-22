@@ -3,14 +3,7 @@
 <form id='survey-builder' action="/surveys" method="post">
   Survey Title: <input class='survey-title' name="survey[title]" placeholder="One Bad Mutha-Otter Survey">
   <ol>
-    <li>
-      <input class='question' type='text' name='survey[questions][][question]' placeholder='What do you want to ask?'>
-      <button class='remove-button'>✖</button>
-      <button class='button add-option'>add option</button>
-      <ul>
-        <li><input class='option' type='text' name='survey[questions][][options][]' placeholder='an option'> <button class='remove-button'>✖</button></li>
-      </ul>
-    </li>
+    <!-- populated by survey_builder.js -->
   </ol>
   <button class='button add-question'>Add question</button>
   <div class='bottom-border'></div>
