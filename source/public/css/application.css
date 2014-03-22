@@ -15,7 +15,7 @@ th {
   text-align: left;
 }
 
-button {
+button, .button {
   width: 100px;
   margin: 10px 0 0 0;
   background-color: #E65F17;
@@ -25,30 +25,8 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+button:hover, .button:hover {
   background-color: #E6AE17;
-}
-
-.remove-button {
-  width: 20px;
-  margin: 0;
-  background-color: white;
-  color: red;
-  border: none;
-  padding: 0;
-  border-radius: 10px;
-  /*line-height: 10px;*/
-}
-
-.remove-button:hover {
-  width: 20px;
-  margin: 0;
-  background-color: white;
-  color: red;
-  border: none;
-  padding: 0;
-  border-radius: 10px;
-  /*line-height: 10px;*/
 }
 
 #new-post > input, textarea {

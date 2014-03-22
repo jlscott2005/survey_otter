@@ -1,18 +1,13 @@
 <div class='container'>
+<h1>Create An-Otter Survey!</h1>
 <form id='survey-builder' action="/surveys" method="post">
-  <input name="survey[title]" placeholder="title">
+  Survey Title: <input class='survey-title' name="survey[title]" placeholder="One Bad Mutha-Otter Survey">
   <ol>
-    <li>
-      <input type='text' name='survey[questions][][question]' placeholder='question'>
-      <button class='remove-button'>✖</button>
-      <button class='button add-option'>add option</button>
-      <ul>
-        <li><input type='text' name='survey[questions][][options][]' placeholder='option'><button class='remove-button'>✖</button></li>
-      </ul>
-    </li>
+    <!-- populated by survey_builder.js -->
   </ol>
-  <a href="#" class='button add-question'><button>Add question</button></a>
-  <input type='submit' value='Create My Survey!'/>
+  <button class='button add-question'>Add question</button>
+  <div class='bottom-border'></div>
+  <input class='button' id='create-survey' type='submit' value='Create My Survey! >>'/>
 </form>
 </div>
 
