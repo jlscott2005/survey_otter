@@ -4,8 +4,8 @@ body {
 }
 
 .container {
-  margin: 20px auto;
-  width: 600px;
+  margin: 0 auto;
+  width: 50%;
   padding: 1px 20px 20px 20px;
   border-radius: 2px;
   background-color: white;
@@ -197,3 +197,24 @@ input {
 #non-user p {
   margin-bottom: 5px;
 }
+
+.random_otters {
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  margin: 0;
+}
+
+.cushion {
+  width:23%;
+  display:inline-block;
+}
+
+
+
+
+
+
+
+
+
