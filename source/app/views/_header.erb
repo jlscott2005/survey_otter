@@ -7,6 +7,7 @@
         <form action='/sessions/<%=session[:user_id]%>' method="get">
           <input type='submit' value="logout">
         </form>
+        <a href='/users/<%=session[:user_id]%>'><button>my surveys</button></a>
       </div>
     <% else %>
       <div id="non-user">
