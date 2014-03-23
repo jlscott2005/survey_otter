@@ -1,6 +1,6 @@
 <div class="container">
 	<h2><%= @survey.title %></h2>
-	<form id="take_survey" action="surveys/<%= @survey.id %>/take" method="post">
+	<form id="take_survey" action="/surveys/<%= @survey.id %>/take" method="post">
 		<ol>
 			<% @survey.questions.each do |question| %>
 			<li><%= question.question %></li>
