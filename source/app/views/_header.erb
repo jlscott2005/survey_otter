@@ -11,6 +11,14 @@
     <% else %>
       <div id="non-user">
         <p>Welcome, Anonymous Otter!</p>
+        <% if @error %>
+          <div class="errors"><%= @error %></div>
+        <% end %>
+        <% if @user && !@user.errors.empty? %>
+        <div class="errors">
+          <%= @user.errors.messages.to_a.map {|pair| pair.join(' ')}.join(", ")%>
+        </div>
+        <%end%>
         <button id="login-button" type="button"><a href="/login">Login</a></button>
         <button id="signup-button" type="button"><a href="/signup">Signup</a></button>
       </div>

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   def self.check_password(username, password)
     user = self.find_by(name: username)
-    user = user.authenticate(password)
-    user
+    return user if user && user.authenticate(password)
+    nil
   end
 end

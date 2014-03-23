@@ -14,7 +14,8 @@ post '/users' do
     session[:user_id] = @user.id
     redirect to '/'
   else
-    @error = @user.errors.messages
-    erb :login
+    @surveys = Survey.all
+    @errors = @user.errors.messages.to_a.map { |pair| pair.join (' ')}.join(", ")
+    erb :index
   end
 end
