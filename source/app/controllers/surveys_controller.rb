@@ -19,7 +19,11 @@ end
 
 get '/surveys/:id' do
   @survey = Survey.find(params[:id])
-  erb :"surveys/show"
+  if session[:user_id] == nil
+    redirect to '/'
+  else
+    erb :"surveys/show"
+  end
 end
 
 get '/surveys/:id/edit' do
@@ -29,6 +33,12 @@ get '/surveys/:id/edit' do
   else
     redirect to '/'
   end
+end
+
+post '/surveys/:id/take' do
+  taken_survey = TakenSurvey.create(taker_id: session[:user_id], survey_id: params[:id])
+  TakenSurveyParser.save_taken_survey(taken_survey, params)
+  redirect to "/users/#{session[:user_id]}"
 end
 
 patch '/surveys' do
@@ -49,6 +59,7 @@ patch '/surveys' do
 
   redirect to "/surveys/#{survey.id}"
 end
+
 
 
 
