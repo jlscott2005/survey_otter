@@ -16,7 +16,7 @@ module SurveyBuilderParser
 end
 
 module TakenSurveyParser
-	def self.save_taken_survey(taken_survey, questions_options_hash) # just need options, but get question_id_option_id pairs as params
+	def self.save_taken_survey(taken_survey, questions_options_hash)
 		questions_options_hash.each do |question_id, option_id|
 			taken_survey.responses << Response.create(question_id: question_id, option_id: option_id)
 		end

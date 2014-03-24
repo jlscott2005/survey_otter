@@ -1,14 +1,28 @@
+html {
+  background: url('/img/forest.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+
+
 body {
-  background-color: #042E50;
   font-family: 'Special Elite', sans-serif;
+
 }
 
 .container {
   margin: 0 auto;
-  width: 50%;
-  padding: 1px 20px 20px 20px;
+  width: 1000px;
+  padding: 1px 0px 20px 0px;
   border-radius: 2px;
   background-color: white;
+  /*color: #E6AE17;*/
+  border:5px solid #E6AE17;
 }
 
 th {
@@ -76,8 +90,11 @@ button:hover {
 */
 .header {
   margin: 30px 50px;
+  padding: 5px 10px;
   font-size: 1.6em;
   position: relative;
+  background-color: green;
+  background-color:rgba(30,130,0,0.5);
 }
 
 .header h1, .header a {
@@ -205,12 +222,16 @@ input {
   margin: 0;
 }
 
-.cushion {
-  width:23%;
-  display:inline-block;
+#random_otters_container {
+  margin: 0 auto;
+  width: 1000px;
+  font-size:0;
+  border:5px solid #E6AE17;
+  border-bottom:none;
 }
-
-
+.taken_survey_questions {
+  list-style: none;
+}
 
 
 

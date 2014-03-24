@@ -13,13 +13,15 @@
 </head>
 <body>
   <%= erb :_header %>
-  <div class="cushion"></div>
+  <!-- <div class="cushion"></div> -->
+  <div id="random_otters_container">
   <img class="random_otters" id="0" src="/img/rotating_otter_images/otters_1.jpg">
   <img class="random_otters" id="1" src="/img/rotating_otter_images/otters_2.jpg">
   <img class="random_otters" id="2" src="/img/rotating_otter_images/otters_3.jpg">
   <img class="random_otters" id="3" src="/img/rotating_otter_images/otters_4.jpg">
   <img class="random_otters" id="4" src="/img/rotating_otter_images/otters_5.jpg">
-  <div class="cushion"></div>
+  </div>
+  <!-- <div class="cushion"></div> -->
   <%= yield %>
 </body>
 </html>

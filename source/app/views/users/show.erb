@@ -1,18 +1,26 @@
 <div class="container">
 
   <h3>Welcome!</h3>
-
+  <p>Select a user to view their responses or click the survey title to see cumulative results.</p>
   <h4>Otter Surveys Taken</h4>
   <ol>
-  <% @user.reviewed_surveys.each do |survey| %>
-    <li><a href="#"><%= survey.title %></a></li>
+  <% @user.reviewed_surveys.each do |reviewed_survey| %>
+    <li><a href="/taken_surveys/<%= reviewed_survey.id %>/results"><%= reviewed_survey.title %></a>
+        <form action='/taken_surveys/<%= reviewed_survey.id %>' method='post'>
+          <select name="taker_id">
+            <% reviewed_survey.takers.each do |taker| %>
+            <option value="<%=taker.id%>"><%=taker.name%></option>
+            <% end %>
+          </select>
+            <input type="submit" value="Go!">
+        </form>
+    </li>
   <% end %>
   </ol>
   <h4>Otter Surveys Created</h4>
   <ol>
-    <% @user.surveys.each do |show| %>
-      <li><a href="#"><%= show.title %></a></li>
+    <% @user.surveys.each do |user_created_survey| %>
+      <li><a href="/taken_surveys/<%=user_created_survey.id%>/results"><%= user_created_survey.title %></a></li>
     <%end%>
   </ol>
-  <a href="#">Create Post</a>
 </div>

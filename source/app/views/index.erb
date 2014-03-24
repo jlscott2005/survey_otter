@@ -1,4 +1,5 @@
 <div class="container">
+  <p>Log in to create or take a survey! (The links are inactive otherwise.)</p>
   <ol>
     <% @surveys.each do |survey| %>
     <li><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></li>
@@ -7,6 +8,5 @@
   <% if session[:user_id] != nil %>
   <a href="/surveys/new">Create a Survey!</a>
   <% else %>
-  <p>Log in to create or take a survey! (The links are inactive otherwise.)</p>
   <% end %>
 </div>

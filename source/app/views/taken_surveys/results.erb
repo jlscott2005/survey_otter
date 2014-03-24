@@ -1,0 +1,14 @@
+<div class="container">
+  <ol>
+    <% @survey.questions.each do |question| %>
+      <li>
+        <p><%= question.question %><p>
+        <ul>
+          <% question.options.each do |option| %>
+          <li><span style="color: blue"><%= @options_frequency[option.id] %> otters responded:</span> <%= option.text %></li><br>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+</div>
