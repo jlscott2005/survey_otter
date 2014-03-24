@@ -1,0 +1,24 @@
+<div class="container">
+  <ul>
+    <% @taken_survey.responses.each do |response| %>
+    <li>
+      <% question = Question.find(response.question_id) %>
+      <%= question.question %><br><br>
+      <ul class="taken_survey_questions">
+        <% question.options.each do |option| %>
+        <li>
+           <% if response.option_id == option.id %>
+            <span style="color:green; font-size:16pt; position:relative; left:-5px">✔ </span>
+          <% end %>
+          <%= option.text %>
+        </li><br>
+        <% end %>
+      </ul>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<% content_for :style do %>
+  <link rel="stylesheet" href="/css/survey_builder.css"/>
+<% end %>

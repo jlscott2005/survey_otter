@@ -23,6 +23,15 @@ $(document).ready(function() {
       $('#non-user').show();
     });
 
+
+      var count = 0
+    $(".random_otters").on("click", function(){
+      $(".random_otters" + "#" + (count % 6)).attr("src", "/img/rotating_otter_images/otters_"+( (count % 5) + 1 )+".jpg");
+      count++;
+    });
+
+
+
   //   $('#logout button a').on("click", function (e) {
   //   e.preventDefault();
   //   var request = $.ajax({ url: $(this).attr('href'), type: 'delete' });

@@ -37,7 +37,8 @@ end
 
 post '/surveys/:id/take' do
   taken_survey = TakenSurvey.create(taker_id: session[:user_id], survey_id: params[:id])
-  TakenSurveyParser.save_taken_survey(taken_survey, params)
+  TakenSurveyParser.save_taken_survey(taken_survey, params[:survey])
+  session[:taken_survey_id] = taken_survey.id
   redirect to "/users/#{session[:user_id]}"
 end
 
