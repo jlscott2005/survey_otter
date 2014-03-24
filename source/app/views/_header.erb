@@ -4,10 +4,8 @@
   <div id="user-box">
     <% if session[:user_id] %>
       <div id="user">
-        <form action='/sessions/<%=session[:user_id]%>' method="get">
-          <input type='submit' value="logout">
-        </form>
-        <a href='/users/<%=session[:user_id]%>'><button>my surveys</button></a>
+        <a class='button' href='/sessions/<%=session[:user_id]%>'>logout</a>
+        <a class='button' href='/users/<%=session[:user_id]%>'>my surveys</a>
       </div>
     <% else %>
       <div id="non-user">
@@ -20,8 +18,8 @@
           <%= @user.errors.messages.to_a.map {|pair| pair.join(' ')}.join(", ")%>
         </div>
         <%end%>
-        <button id="login-button" type="button"><a href="/login">Login</a></button>
-        <button id="signup-button" type="button"><a href="/signup">Signup</a></button>
+        <a id="signup-button" class='button'href="/signup">Signup</a>
+        <a id="login-button" class='button' href="/login">Login</a>
       </div>
       <div id="login">
         <form action='/sessions' method="post" >

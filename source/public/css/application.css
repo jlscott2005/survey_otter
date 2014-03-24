@@ -38,7 +38,7 @@ th {
 
 #user-box > * {
   font-size: 0.6em;
-  color: #E6AE17;
+  color: white;
   float: right;
   text-decoration: none;
   margin: 0;
@@ -98,7 +98,7 @@ button:hover, .button:hover {
   background-color:rgba(30,130,0,0.5);
 }
 
-.header h1, .header a {
+.header h1 a {
   font-family: 'Ribeye Marrow', cursive;
   color: #E6AE17;
   text-decoration: none;
@@ -204,16 +204,18 @@ input {
   padding: 3px;
 }
 
-#non-user button {
+#non-user a {
   margin-right: 5px;
+  float: right;
 }
 
 #non-user button:last-child {
   margin-right: none;
 }
 
-#non-user p {
+#non-user {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .random_otters {
@@ -234,7 +236,13 @@ input {
   list-style: none;
 }
 
+#user {
+  margin-top: 20px;
+}
 
+#user > a {
+  margin: 4px;
+}
 
 
 

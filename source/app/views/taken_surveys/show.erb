@@ -1,18 +1,24 @@
 <div class="container">
+  <h1><%= @taken_survey.survey.title %></h1>
   <ul>
     <% @taken_survey.responses.each do |response| %>
     <li>
       <% question = Question.find(response.question_id) %>
       <%= question.question %><br><br>
       <ul class="taken_survey_questions">
+        <table>
         <% question.options.each do |option| %>
-        <li>
-           <% if response.option_id == option.id %>
-            <span style="color:green; font-size:16pt; position:relative; left:-5px">✔ </span>
-          <% end %>
-          <%= option.text %>
-        </li><br>
+        <tr>
+            <% if response.option_id == option.id %>
+              <td style="color:green; font-size:16pt; position:relative; left:-5px"> ✔ </td>
+            <% else %>
+              <td></td>
+            <% end %>
+            <td><%= option.text %></td>
+        </tr>
         <% end %>
+        </table>
+        <br>
       </ul>
     </li>
     <% end %>
