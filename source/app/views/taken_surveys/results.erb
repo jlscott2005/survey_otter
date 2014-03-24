@@ -5,7 +5,7 @@
         <p><%= question.question %><p>
         <ul>
           <% question.options.each do |option| %>
-          <li><span style="color: blue"><%= @options_frequency[option.id] %> otters responded:</span> <%= option.text %></li><br>
+          <li><span style="color: blue"><%= @options_frequency[option.id] %> otter<%if @options_frequency[option.id] != 1; %><%="s"%><%end%> responded:</span> <%= option.text %></li><br>
           <% end %>
         </ul>
       </li>
