@@ -11,6 +11,8 @@
 
 form {
   position:relative;
+  width: 600px;
+  margin: 0 auto 70px auto;
   margin-bottom: 70px;
 }
 
@@ -26,72 +28,7 @@ div .bottom-border{
 
 ol > li {
   border-bottom: 2px solid #042E50;
-  width: 550px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
-
-ol > li:first-child {
-  margin-top: 0;
-  padding-top: 20px;
-}
-
-ol > li:last-child {
-  margin-bottom: 20;
-}
-
-input {
-  box-sizing: border-box;
-  padding: 4px;
-  margin-top: 8px;
-}
-
-.survey-title {
-  width: 400px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-.question {
-  width: 420px;
-}
-
-.option {
-  width: 400px;
-}
-
-.add-question {
-  margin: 0 0 0 40px;
-  width: 420px;
-}
-
-#create-survey {
-  position: absolute;
-  right: 0;
-  width: 200px;
-  height: 60px;
-}
-
-form {
-  position:relative;
-  margin-bottom: 70px;
-}
-
-ol {
-  border-top: 2px solid #042E50;
-  margin-bottom: 0;
-}
-
-div .bottom-border{
-  border-bottom: 2px solid #042E50;
-  margin-top: 20px;
-}
-
-ol > li {
-  border-bottom: 2px solid #042E50;
-  width: 550px;
+  width: 560px;
   margin-bottom: 5px;
   padding-bottom: 20px;
 }
