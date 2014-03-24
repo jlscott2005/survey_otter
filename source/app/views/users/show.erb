@@ -20,7 +20,8 @@
   <h4>Otter Surveys Created</h4>
   <ol>
     <% @user.surveys.each do |user_created_survey| %>
-      <li><a href="/taken_surveys/<%=user_created_survey.id%>/results"><%= user_created_survey.title %></a></li>
+      <li><a href="/taken_surveys/<%=user_created_survey.id%>/results"><%= user_created_survey.title %></a>
+        <a href="/surveys/<%=user_created_survey.id%>/edit"><button>Edit</button></a></li>
     <%end%>
   </ol>
 </div>
